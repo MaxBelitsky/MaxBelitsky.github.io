@@ -2339,12 +2339,21 @@ figure.cover {
 }
 
 .project-link--primary {
-  border-color: transparent;
-  background-color: var(--global-theme-color);
-  color: var(--global-text-color-on-theme, #fff);
+  border-color: rgba(var(--global-theme-color-rgb, 0, 0, 0), 0.8);
+  background-color: transparent;
+  color: var(--global-theme-color);
+  box-shadow: inset 0 0 0 1px rgba(var(--global-theme-color-rgb, 0, 0, 0), 0.8);
+
+  i {
+    color: inherit;
+  }
 
   &:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    background-color: rgba(var(--global-theme-color-rgb, 0, 0, 0), 0.08);
+    color: var(--global-theme-color);
+    box-shadow:
+      inset 0 0 0 1px rgba(var(--global-theme-color-rgb, 0, 0, 0), 0.9),
+      0 8px 24px rgba(0, 0, 0, 0.12);
   }
 }
 
