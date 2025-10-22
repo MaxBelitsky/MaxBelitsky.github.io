@@ -1028,13 +1028,38 @@ footer.sticky-bottom {
 
       @media (max-width: 720px) {
         .row {
-          grid-template-columns: 1fr;
-          row-gap: 1rem;
+          grid-template-columns: minmax(65px, 22vw) minmax(0, 1fr);
+          column-gap: clamp(0.6rem, 3vw, 0.9rem);
+          align-items: start;
         }
 
         .row > .abbr {
-          max-width: 160px;
+          max-width: clamp(70px, 22vw, 95px);
           justify-self: start;
+
+          figure,
+          img {
+            width: clamp(62px, 22vw, 88px);
+            height: auto;
+          }
+        }
+      }
+
+      @media (max-width: 520px) {
+        .row {
+          grid-template-columns: 1fr;
+          row-gap: 0.85rem;
+        }
+
+        .row > .abbr {
+          max-width: 90px;
+          justify-self: start;
+
+          figure,
+          img {
+            width: clamp(60px, 32vw, 80px);
+            height: auto;
+          }
         }
       }
 
@@ -2118,6 +2143,7 @@ figure.cover {
       width: 100%;
       height: auto;
       display: block;
+      padding-right: 0;
       // background-color: #a6517d;
     }
 
