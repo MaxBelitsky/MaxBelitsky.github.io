@@ -953,6 +953,7 @@ footer.sticky-bottom {
 
 .publications {
   margin-top: 2rem;
+  // background-color: #62c462;
 
   h1 {
     color: var(--global-theme-color);
@@ -985,6 +986,41 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--global-text-color);
+
+      .row {
+        margin: 0;
+        display: grid;
+        grid-template-columns: minmax(110px, 130px) minmax(0, 1fr);
+        column-gap: 1.75rem;
+        align-items: start;
+      }
+
+      .row > .abbr {
+        padding: 0;
+        margin: 0;
+        align-self: start;
+      }
+
+      .row > [class*="col"] {
+        padding: 0;
+        max-width: none;
+        min-width: 0;
+      }
+
+      @media (max-width: 720px) {
+        .row {
+          grid-template-columns: 1fr;
+          row-gap: 1rem;
+        }
+
+        .row > .abbr {
+          max-width: 160px;
+          justify-self: start;
+        }
+      }
 
       .abbr {
         margin-bottom: 0.5rem;
@@ -1011,45 +1047,80 @@ footer.sticky-bottom {
       }
 
       .title {
-        font-weight: bolder;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--global-text-color);
+        line-height: 1.4;
+        margin-bottom: 0.25rem;
+        text-rendering: optimizeLegibility;
       }
 
       .author {
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--global-text-color-light);
+
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
+          color: inherit;
+          border-bottom: 1px dashed var(--global-divider-color);
 
           &:hover {
+            color: var(--global-theme-color);
             border-bottom-style: solid;
+            border-bottom-color: var(--global-theme-color);
             text-decoration: none;
           }
         }
 
-        > em {
-          border-bottom: 1px solid;
-          font-style: normal;
-        }
+      > em {
+        border-bottom: 1px solid;
+        font-style: normal;
+        color: var(--global-text-color-light);
+        font-weight: 500;
+      }
 
         > span.more-authors {
-          color: var(--global-text-color-light);
-          border-bottom: 1px dashed var(--global-text-color-light);
+          color: inherit;
+          border-bottom: 1px dashed var(--global-divider-color);
           cursor: pointer;
 
           &:hover {
             color: var(--global-text-color);
-            border-bottom: 1px dashed var(--global-text-color);
+            border-bottom: 1px dashed var(--global-theme-color);
           }
         }
       }
 
+      .periodical {
+        font-size: 0.9rem;
+        color: var(--global-text-color-light);
+        font-style: normal;
+
+        em {
+          font-style: italic;
+          color: var(--global-text-color);
+        }
+      }
+
       .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.1rem;
+
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          padding-left: 0.9rem;
+          padding-right: 0.9rem;
+          padding-top: 0.3rem;
+          padding-bottom: 0.3rem;
           margin-left: 0;
+          font-size: 0.7rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          border-radius: 8px;
 
           &:hover {
             color: var(--global-theme-color);
@@ -1685,6 +1756,7 @@ figure.cover {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    padding-right: 8em;   // Move the column to the left from the center
     // background-color: #a6517d; // for testing
   }
 
@@ -1710,8 +1782,25 @@ figure.cover {
     min-width: 0;
     padding-top: 0;
     padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    // padding-left: 2rem;
+    // padding-right: 2rem;
+
+    h3 {
+      font-size: clamp(1.85rem, 1.4vw + 1.3rem, 2.25rem);
+      font-weight: 800;
+      margin-bottom: 1.35rem;
+    }
+
+    .see-more-container {
+      // margin-top: 1rem;
+
+      .see-more-link {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    }
 
     .publications-section + .see-more-container {
       margin-bottom: 0.8rem;
