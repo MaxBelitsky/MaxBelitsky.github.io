@@ -1,0 +1,66 @@
+{% comment %}
+Combined updates section showing latest news and blog posts with compact design
+{% endcomment %}
+
+<div class="updates">
+  {% assign all_updates = '' | split: '' %}
+  
+  {% comment %} Collect news items {% endcomment %}
+  {% for announcement in site.news %}
+    {% assign all_updates = all_updates | push: announcement %}
+  {% endfor %}
+  
+  {% comment %} Collect blog posts {% endcomment %}
+  {% for post in site.posts %}
+    {% assign all_updates = all_updates | push: post %}
+  {% endfor %}
+  
+  {% comment %} Sort by date (most recent first) {% endcomment %}
+  {% assign sorted_updates = all_updates | sort: 'date' | reverse %}
+  
+  {% comment %} Limit items if specified {% endcomment %}
+  {% if page.updates.limit %}
+    {% assign sorted_updates = sorted_updates | slice: 0, page.updates.limit %}
+  {% endif %}
+  
+  <div class="updates-list {% if page.updates.scrollable %}scrollable{% endif %}">
+    {% for update in sorted_updates %}
+      <div class="update-item">
+        <div class="update-date">
+          {{ update.date | date: "%b %d" }}
+        </div>
+        <div class="update-content">
+          <div class="update-text">
+            {% if update.layout == 'post' and update.inline != true %}
+              {% if update.description %}
+                {{ update.description }}
+              {% else %}
+                {{ update.content | strip_html | truncatewords: 20 }}
+              {% endif %}
+            {% else %}
+              {{ update.content | remove: '<p>' | remove: '</p>' | strip_html }}
+            {% endif %}
+          </div>
+          
+          {% if update.external_links %}
+            <div class="external-links">
+              {% for link in update.external_links %}
+                <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="external-link" title="{{ link.title }}">
+                  <i class="{{ link.icon }}"></i>
+                  <span>{{ link.title }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          {% elsif update.layout == 'post' and update.inline != true %}
+            <div class="external-links">
+              <a href="{{ update.url | relative_url }}" class="external-link">
+                <i class="fas fa-arrow-right"></i>
+                <span>Read more</span>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

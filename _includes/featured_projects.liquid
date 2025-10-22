@@ -1,0 +1,63 @@
+{% comment %}
+Featured projects section - shows expandable project cards with media links
+{% endcomment %}
+
+{% assign featured_projects = site.projects | where: "featured", true | sort: "importance" %}
+
+<div class="featured-projects">
+  {% for project in featured_projects %}
+    <div class="project-card">
+      <div class="project-card-header">
+        {% if project.img %}
+          <div class="project-image">
+            {% assign project_image_path = project.img | prepend: '' %}
+            {% include figure.liquid loading="lazy" path=project_image_path alt=project.title class="img-fluid rounded" %}
+          </div>
+        {% endif %}
+        
+        <div class="project-info">
+          <h5 class="project-title">{{ project.title }}</h5>
+          <p class="project-short-description">
+            {% if project.short_description %}
+              {{ project.short_description }}
+            {% else %}
+              {{ project.description }}
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      
+      <div class="project-actions">
+        {% if project.media_links %}
+          <div class="media-links">
+            {% for link in project.media_links %}
+              <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="media-link {{ link.type }}" title="{{ link.title }}">
+                {% case link.type %}
+                  {% when 'article' %}
+                    <i class="fas fa-file-alt"></i>
+                  {% when 'video' %}
+                    <i class="fas fa-play-circle"></i>
+                  {% when 'blog' %}
+                    <i class="fas fa-blog"></i>
+                  {% when 'demo' %}
+                    <i class="fas fa-external-link-alt"></i>
+                  {% when 'code' %}
+                    <i class="fab fa-github"></i>
+                  {% else %}
+                    <i class="fas fa-link"></i>
+                {% endcase %}
+                <span class="link-text">{{ link.title }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+                <a href="{{ project.url | relative_url }}" class="expand-btn">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span class="expand-text">More</span>
+                </a>
+              </div>
+    </div>
+  {% endfor %}
+</div>
+

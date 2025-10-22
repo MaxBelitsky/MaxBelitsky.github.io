@@ -1,0 +1,71 @@
+{% assign orientation = include.orientation | default: 'vertical' %}
+{% capture card_classes %}
+project-list-card{% if orientation == 'horizontal' %} project-list-card--horizontal{% endif %}
+{% endcapture %}
+{% capture inner_classes %}
+project-list-card__inner{% if orientation == 'horizontal' %} project-list-card__inner--horizontal{% endif %}
+{% endcapture %}
+{% capture media_classes %}
+project-list-card__media{% if orientation == 'horizontal' %} project-list-card__media--horizontal{% endif %}
+{% endcapture %}
+{% if orientation == 'horizontal' %}
+  {% assign image_sizes = "(min-width: 1200px) 320px, (min-width: 768px) 45vw, 90vw" %}
+{% else %}
+  {% assign image_sizes = "(min-width: 1200px) 360px, (min-width: 768px) 60vw, 90vw" %}
+{% endif %}
+{% assign summary = project.short_description | default: project.description | default: "" %}
+{% assign summary = summary | strip_html | truncatewords: 28 %}
+{% assign callout_count = project.callouts | size %}
+{% assign skills = project.skills | default: project.tags %}
+{% assign skill_count = skills | size %}
+{% assign has_meta = project.year or project.role or project.institution %}
+<a class="{{ card_classes | strip }}" href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+  <div class="{{ inner_classes | strip }}">
+    {% if project.img %}
+      <div class="{{ media_classes | strip }}">
+        {% include figure.liquid loading="lazy" path=project.img sizes=image_sizes alt=project.title class="project-list-card__image" %}
+      </div>
+    {% endif %}
+    <div class="project-list-card__body">
+      {% if callout_count > 0 %}
+        <div class="project-list-card__callouts">
+          {% for callout in project.callouts limit: 2 %}
+            <span class="project-list-chip project-list-chip--callout">{{ callout }}</span>
+          {% endfor %}
+        </div>
+      {% elsif project.category %}
+        <div class="project-list-card__callouts">
+          <span class="project-list-chip project-list-chip--callout">{{ project.category | capitalize }}</span>
+        </div>
+      {% endif %}
+      <h3 class="project-list-card__title">{{ project.title }}</h3>
+      {% if summary != "" %}
+        <p class="project-list-card__description">{{ summary }}</p>
+      {% endif %}
+      {% if has_meta or skill_count > 0 %}
+        <div class="project-list-card__footer">
+          {% if has_meta %}
+            <div class="project-list-card__meta">
+              {% if project.year %}
+                <span class="project-list-meta">{{ project.year }}</span>
+              {% endif %}
+              {% if project.role %}
+                <span class="project-list-meta">{{ project.role }}</span>
+              {% endif %}
+              {% if project.institution %}
+                <span class="project-list-meta">{{ project.institution }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if skill_count > 0 %}
+            <div class="project-list-card__tags">
+              {% for skill in skills limit: 4 %}
+                <span class="project-list-tag">{{ skill }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</a>

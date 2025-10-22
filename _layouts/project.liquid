@@ -1,0 +1,216 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<article class="project-page">
+  <header class="project-hero">
+    {% if page.img %}
+      <div class="project-hero__media">
+        {% assign project_image_path = page.img | prepend: '' %}
+        {% include figure.liquid loading="lazy" path=project_image_path alt=page.title class="project-hero__image" %}
+      </div>
+    {% endif %}
+
+    <div class="project-hero__content">
+      {% if page.callouts %}
+        <div class="project-callouts">
+          {% for callout in page.callouts %}
+            <span class="project-callout">{{ callout }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <h1 class="project-title">{{ page.title }}</h1>
+
+      {% assign tagline = page.tagline | default: page.description %}
+      {% if tagline %}
+        <p class="project-tagline">{{ tagline }}</p>
+      {% endif %}
+
+      {% assign has_meta = page.year or page.role or page.collaborators or page.institution or page.metadata %}
+      {% if has_meta %}
+        <dl class="project-meta">
+          {% if page.year %}
+            <div class="project-meta__item">
+              <dt>Year</dt>
+              <dd>{{ page.year }}</dd>
+            </div>
+          {% endif %}
+          {% if page.role %}
+            <div class="project-meta__item">
+              <dt>Role</dt>
+              <dd>{{ page.role }}</dd>
+            </div>
+          {% endif %}
+          {% if page.institution %}
+            <div class="project-meta__item">
+              <dt>Institution</dt>
+              <dd>{{ page.institution }}</dd>
+            </div>
+          {% endif %}
+          {% if page.collaborators %}
+            <div class="project-meta__item">
+              <dt>Collaborators</dt>
+              <dd>
+                {% if page.collaborators and page.collaborators.size > 0 %}
+                  {{ page.collaborators | array_to_sentence_string: ", ", " & " }}
+                {% else %}
+                  {{ page.collaborators }}
+                {% endif %}
+              </dd>
+            </div>
+          {% endif %}
+          {% if page.metadata %}
+            {% for item in page.metadata %}
+              <div class="project-meta__item">
+                <dt>{{ item.label }}</dt>
+                <dd>{{ item.value }}</dd>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </dl>
+      {% endif %}
+
+      {% assign hero_links = page.links | default: page.primary_links %}
+      {% if hero_links %}
+        <div class="project-hero__links">
+          {% for link in hero_links %}
+            <a class="project-link project-link--primary" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+              {% if link.icon %}
+                <i class="{{ link.icon }}"></i>
+              {% endif %}
+              <span>{{ link.label | default: link.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% assign details = page.details %}
+  {% assign has_details = details.contribution or details.architecture or details.tools or details.challenges or details.results or details.gallery %}
+  {% assign has_overview = page.overview.what or page.overview.why %}
+  {% assign has_media_links = page.media_links %}
+  {% assign has_overview_or_details = has_overview or has_details %}
+  {% assign has_content = content | strip %}
+  {% if has_overview_or_details or has_media_links or has_content %}
+    <section class="project-section project-details">
+      <h2>Details</h2>
+      <div class="project-section__grid">
+        {% if page.overview.what %}
+          <div class="project-subsection">
+            <h3>Project snapshot</h3>
+            <div class="project-subsection__body">
+              {{ page.overview.what | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+        {% if page.overview.why %}
+          <div class="project-subsection">
+            <h3>Why it mattered</h3>
+            <div class="project-subsection__body">
+              {{ page.overview.why | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+        {% if details.contribution %}
+          <div class="project-subsection">
+            <h3>My role</h3>
+            <div class="project-subsection__body">
+              {{ details.contribution | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+        {% if details.architecture %}
+          <div class="project-subsection">
+            <h3>Technical details</h3>
+            <div class="project-subsection__body">
+              {{ details.architecture | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+        {% if details.tools %}
+          <div class="project-subsection">
+            <h3>Tools &amp; skills</h3>
+            <div class="project-subsection__body">
+              {% if details.tools.size %}
+                <ul class="project-tools">
+                  {% for tool in details.tools %}
+                    <li>{{ tool }}</li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                {{ details.tools | markdownify }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if details.results %}
+          <div class="project-subsection">
+            <h3>Impact</h3>
+            <div class="project-subsection__body">
+              {{ details.results | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if has_content %}
+        <div class="project-narrative">
+          {{ content }}
+        </div>
+      {% endif %}
+
+      {% if details.gallery %}
+        <div class="project-gallery">
+          {% for item in details.gallery %}
+            <figure class="project-gallery__item">
+              {% assign gallery_image_path = item.path | prepend: '' %}
+              {% include figure.liquid loading="lazy" path=gallery_image_path alt=item.caption class="project-gallery__image" %}
+              {% if item.caption %}
+                <figcaption>{{ item.caption }}</figcaption>
+              {% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if page.media_links %}
+        <div class="project-resources">
+          <h3>Explore more</h3>
+          <div class="project-resources__list">
+            {% for link in page.media_links %}
+              <a class="project-link" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+                {% case link.type %}
+                  {% when 'code' %}
+                    <i class="fab fa-github"></i>
+                  {% when 'video' %}
+                    <i class="fas fa-video"></i>
+                  {% when 'demo' %}
+                    <i class="fas fa-rocket"></i>
+                  {% when 'slides' %}
+                    <i class="fas fa-file-powerpoint"></i>
+                  {% when 'paper' %}
+                    <i class="fas fa-file-alt"></i>
+                  {% else %}
+                    <i class="fas fa-link"></i>
+                {% endcase %}
+                <span>{{ link.title }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</article>
