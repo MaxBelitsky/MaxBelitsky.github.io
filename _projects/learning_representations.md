@@ -15,6 +15,7 @@ tagline: "Reproducing universal sentence representations using Natural Language 
 callouts:
   - "📖 Reproducibility Project"
 year: "2025"
+institution: "University of Amsterdam"
 role: 
 links:
   - label: "GitHub Repo"

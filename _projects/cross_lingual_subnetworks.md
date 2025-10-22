@@ -16,6 +16,7 @@ tagline: "Investigating computation sharing across languages in multilingual Tra
 callouts:
   - "🧠 Research Project"
 year: "2025"
+institution: "University of Amsterdam"
 role: 
 links:
   - label: "GitHub Repo"
