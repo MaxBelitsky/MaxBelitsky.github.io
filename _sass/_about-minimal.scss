@@ -249,20 +249,22 @@
       display: block;
       cursor: pointer;
       
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.03);
-      }
-      
       &:focus-visible {
         outline: 3px solid var(--global-theme-color);
         outline-offset: 2px;
       }
     }
-    
-    &:hover {
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
-      transform: translateY(-4px);
-      border-color: var(--global-theme-color);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+        transform: translateY(-4px);
+        border-color: var(--global-theme-color);
+      }
+
+      .project-card__overlay:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
     }
     
     .project-card-header {
