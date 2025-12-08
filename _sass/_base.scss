@@ -1831,7 +1831,7 @@ figure.cover {
     min-width: 0;
     padding-top: 0;
     padding-bottom: 2rem;
-    // padding-left: 2rem;
+    padding-left: 2rem;
     // padding-right: 2rem;
 
     h3 {
@@ -1949,9 +1949,8 @@ figure.cover {
     
     .description {
       margin-bottom: 15px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      max-width: min(70%, 18rem);
+      font-size: 0.95rem;
+      max-width: min(65%, 16rem);
       text-align: center;
       align-self: center;
 
