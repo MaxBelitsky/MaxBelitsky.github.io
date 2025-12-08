@@ -500,11 +500,12 @@
 // Section headings
 .about-layout {
   .column2 {
-    h3 {
+    h1 {
       color: var(--global-text-color);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 2rem;
     }
     
     .see-more-container {
