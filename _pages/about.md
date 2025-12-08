@@ -9,6 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <i class="fa fa-location-dot fa-xl"></i> Amsterdam, The Netherlands
   description: >
     Hi, I'm Max! I like building products and doing AI research.
 

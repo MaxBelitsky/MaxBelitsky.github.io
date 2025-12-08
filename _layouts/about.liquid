@@ -35,6 +35,12 @@ layout: default
           </div>
         {% endif %}
         
+        {% if page.profile.more_info %}
+          <div class="address">
+            {{ page.profile.more_info }}
+          </div>
+        {% endif %}
+        
         {% if page.profile.email %}
           <div class="contact-info">
             <i class="fa fa-envelope"></i>
