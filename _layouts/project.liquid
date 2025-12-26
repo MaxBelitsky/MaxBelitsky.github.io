@@ -186,7 +186,7 @@ layout: default
           <h3>Explore more</h3>
           <div class="project-resources__list">
             {% for link in page.media_links %}
-              <a class="project-link" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+              <a class="project-link project-link--primary" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
                 {% case link.type %}
                   {% when 'code' %}
                     <i class="fab fa-github"></i>

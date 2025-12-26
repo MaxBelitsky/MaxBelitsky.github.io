@@ -34,26 +34,19 @@ overview:
   what: >
     A computational creativity tool for perfumers that supports the generation, transformation, and optimization of fragrance formulas. The system enables the creation of entirely new perfume formulas across different levels of creativity, enhances existing formulas by exploring nearby regions of the fragrance space, and optimizes formulas according to biodegradability, cost and other constraints while preserving the original olfactory signature.
 
-  why: >
+  why: |
     The system was designed to support perfumers throughout the creative and optimization process by reducing friction and accelerating exploration:
-      <br>
-    	•	Rapid exploration of the fragrance space through generative modeling
-      <br>
-      •	Fast experimentation with alternative formulations and creative variations
-      <br>
-      •	Optimization of formulas for cost, sustainability, and biodegradability without compromising olfactory identity
-      <br>
-      •	Improved decision-making through visualization and traceability of formula changes
+    - Rapid exploration of the fragrance space through generative modeling
+    - Fast experimentation with alternative formulations and creative variations
+    - Optimization of formulas for cost, sustainability, and biodegradability without compromising olfactory identity
+    - Improved decision-making through visualization and traceability of formula changes
 
 details:
-  contribution: >
+  contribution: |
     I worked on the core research and system development, focusing on generative modeling, optimization, and transparency.
-    <br>
-    • Adapted and extended GAN architectures for perfume formula generation, with an emphasis on controllability via latent space manipulation and inversion techniques.
-    <br>
-    • Improved an existing formula optimization pipeline by introducing clustering-based differentiation, enhanced dosing strategies, and modifications to beam search algorithms.
-    <br>
-    •	Designed and implemented a traceability mechanism to track, analyze, and visualize changes applied to perfume formulas by the system.
+    - Adapted and extended GAN architectures for perfume formula generation, with an emphasis on controllability via latent space manipulation and inversion techniques.
+    - Improved an existing formula optimization pipeline by introducing clustering-based differentiation, enhanced dosing strategies, and modifications to beam search algorithms.
+    - Designed and implemented a traceability mechanism to track, analyze, and visualize changes applied to perfume formulas by the system.
   
   tools:
     - Generative Modeling
