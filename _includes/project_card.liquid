@@ -16,8 +16,6 @@ project-list-card__media{% if orientation == 'horizontal' %} project-list-card__
 {% assign summary = project.short_description | default: project.description | default: "" %}
 {% assign summary = summary | strip_html | truncatewords: 28 %}
 {% assign callout_count = project.callouts | size %}
-{% assign skills = project.skills | default: project.tags %}
-{% assign skill_count = skills | size %}
 {% assign has_meta = project.year or project.role or project.institution %}
 <a class="{{ card_classes | strip }}" href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
   <div class="{{ inner_classes | strip }}">
@@ -42,28 +40,19 @@ project-list-card__media{% if orientation == 'horizontal' %} project-list-card__
       {% if summary != "" %}
         <p class="project-list-card__description">{{ summary }}</p>
       {% endif %}
-      {% if has_meta or skill_count > 0 %}
+      {% if has_meta %}
         <div class="project-list-card__footer">
-          {% if has_meta %}
-            <div class="project-list-card__meta">
-              {% if project.year %}
-                <span class="project-list-meta"><span class="project-list-meta__label">Year:</span> {{ project.year }}</span>
-              {% endif %}
-              {% if project.role %}
-                <span class="project-list-meta"><span class="project-list-meta__label">Role:</span> {{ project.role }}</span>
-              {% endif %}
-              {% if project.institution %}
-                <span class="project-list-meta"><span class="project-list-meta__label">Institution:</span> {{ project.institution }}</span>
-              {% endif %}
-            </div>
-          {% endif %}
-          {% if skill_count > 0 %}
-            <div class="project-list-card__tags">
-              {% for skill in skills limit: 4 %}
-                <span class="project-list-tag">{{ skill }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
+          <div class="project-list-card__meta">
+            {% if project.year %}
+              <span class="project-list-meta"><span class="project-list-meta__label">Year:</span> {{ project.year }}</span>
+            {% endif %}
+            {% if project.role %}
+              <span class="project-list-meta"><span class="project-list-meta__label">Role:</span> {{ project.role }}</span>
+            {% endif %}
+            {% if project.institution %}
+              <span class="project-list-meta"><span class="project-list-meta__label">Institution:</span> {{ project.institution }}</span>
+            {% endif %}
+          </div>
         </div>
       {% endif %}
     </div>

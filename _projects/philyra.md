@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Philyra: AI-agumented Perfumery"
+title: "Philyra: AI-augmented Perfumery"
 description: "AI tool for fragrance generation and enhancement."
 img: assets/img/philyra.jpg
 importance: 1
