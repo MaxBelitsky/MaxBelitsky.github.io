@@ -49,8 +49,8 @@ ninja.data = [{
           description: "Reproduction of the results from &quot;Supervised Learning of Universal Sentence Representations from Natural Language Inference Data&quot; paper by Conneau et al. (2018).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/learning_representations/";
-            },},{id: "projects-philyra-ai-agumented-perfumery",
-          title: 'Philyra: AI-agumented Perfumery',
+            },},{id: "projects-philyra-ai-augmented-perfumery",
+          title: 'Philyra: AI-augmented Perfumery',
           description: "AI tool for fragrance generation and enhancement.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/philyra/";
