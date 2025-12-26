@@ -2291,10 +2291,10 @@ figure.cover {
 .project-hero {
   display: grid;
   gap: 1.75rem;
-  padding: 2rem;
-  border: 1px solid var(--global-divider-color);
-  border-radius: 1.5rem;
-  background-color: var(--global-card-bg-color);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
 
   @media (min-width: 768px) {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
@@ -2416,6 +2416,12 @@ figure.cover {
     color: var(--global-theme-color);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   }
+}
+
+.project-section-divider {
+  border-top: 1px solid var(--global-divider-color);
+  margin: 2.5rem 0 2rem;
+  padding-top: 0.4rem;
 }
 
 .project-section {
