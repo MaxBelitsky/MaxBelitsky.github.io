@@ -19,40 +19,49 @@ media_links:
     url: "https://www.youtube.com/watch?v=PH1V5L0_Mhs"
     type: "video"
 tags: ["GAN training", "pareto optimization"]
-tagline: "Co-creating fragrances with generative AI and master perfumers."
+tagline: "AI tool for fragrance generation and enhancement."
 callouts:
   - "🧠 Research Project"
   - "🤝 Industry Collaboration"
 year: "2021–2023"
-role: "AI Research Scientist"
+role: "AI Research Engineer"
 institution: "IBM Research, IBM Consulting & Symrise"
 links:
   - label: "Press Coverage"
     url: "https://www.symrise.com/scent-and-care/competence-platforms/philyra/"
     icon: "fas fa-newspaper"
-# overview:
-#   what: >
-#     I co-created Philyra with Symrise as an AI copilots for master perfumers—marrying generative
-#     modeling with decades of fragrance expertise to explore new scent directions on demand.
-#   why: >
-#     Crafting a fragrance is bounded by safety regulations, cost, and creative intent. By keeping
-#     perfumers in the loop and letting AI surface novel yet compliant ideas, I helped teams move from
-#     brief to winning concept faster.
-# details:
-#   contribution: >
-#     I modelled historic fragrance briefs, encoded IFRA regulations, and designed the co-creation
-#     workflow that lets perfumers steer the AI toward olfactive territories that still feel on-brand.
-#   architecture: >
-#     I trained sequence-based generative models on proprietary ingredient datasets, layered in cost
-#     and compliance scoring, and exposed the system through an interactive studio that iterates on AI
-#     suggestions alongside perfumer feedback.
-#   tools:
-#     - Generative Modeling
-#     - TensorFlow
-#     - Python
-#     - Docker
-#     - IBM Cloud
-#   results: >
-#     Symrise perfumers used Philyra to craft award-winning fragrances for brands like O Boticário,
-#     and the collaboration became a flagship example of human–AI creativity highlighted by the press.
+overview:
+  what: >
+    A computational creativity tool for perfumers that supports the generation, transformation, and optimization of fragrance formulas. The system enables the creation of entirely new perfume formulas across different levels of creativity, enhances existing formulas by exploring nearby regions of the fragrance space, and optimizes formulas according to biodegradability, cost and other constraints while preserving the original olfactory signature.
+
+  why: >
+    The system was designed to support perfumers throughout the creative and optimization process by reducing friction and accelerating exploration:
+      <br>
+    	•	Rapid exploration of the fragrance space through generative modeling
+      <br>
+      •	Fast experimentation with alternative formulations and creative variations
+      <br>
+      •	Optimization of formulas for cost, sustainability, and biodegradability without compromising olfactory identity
+      <br>
+      •	Improved decision-making through visualization and traceability of formula changes
+
+details:
+  contribution: >
+    I worked on the core research and system development, focusing on generative modeling, optimization, and transparency.
+    <br>
+    • Adapted and extended GAN architectures for perfume formula generation, with an emphasis on controllability via latent space manipulation and inversion techniques.
+    <br>
+    • Improved an existing formula optimization pipeline by introducing clustering-based differentiation, enhanced dosing strategies, and modifications to beam search algorithms.
+    <br>
+    •	Designed and implemented a traceability mechanism to track, analyze, and visualize changes applied to perfume formulas by the system.
+  
+  tools:
+    - Generative Modeling
+    - TensorFlow
+    - Python
+    - Docker
+    - IBM Cloud
+  results: >
+    Symrise perfumers used Philyra to craft award-winning fragrances for brands like O Boticário,
+    and the collaboration became a flagship example of human–AI creativity highlighted by the press.
 ---
