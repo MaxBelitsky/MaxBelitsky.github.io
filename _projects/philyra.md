@@ -31,30 +31,30 @@ links:
     url: "https://www.symrise.com/scent-and-care/competence-platforms/philyra/"
     icon: "fas fa-newspaper"
 overview:
-  what: >
-    A computational creativity tool for perfumers that supports the generation, transformation, and optimization of fragrance formulas. The system enables the creation of entirely new perfume formulas across different levels of creativity, enhances existing formulas by exploring nearby regions of the fragrance space, and optimizes formulas according to biodegradability, cost and other constraints while preserving the original olfactory signature.
+#   what: >
+#     A computational creativity tool for perfumers that supports the generation, transformation, and optimization of fragrance formulas. The system enables the creation of entirely new perfume formulas across different levels of creativity, enhances existing formulas by exploring nearby regions of the fragrance space, and optimizes formulas according to biodegradability, cost and other constraints while preserving the original olfactory signature.
 
-  why: |
-    The system was designed to support perfumers throughout the creative and optimization process by reducing friction and accelerating exploration:
-    - Rapid exploration of the fragrance space through generative modeling
-    - Fast experimentation with alternative formulations and creative variations
-    - Optimization of formulas for cost, sustainability, and biodegradability without compromising olfactory identity
-    - Improved decision-making through visualization and traceability of formula changes
+#   why: |
+#     The system was designed to support perfumers throughout the creative and optimization process by reducing friction and accelerating exploration:
+#     - Rapid exploration of the fragrance space through generative modeling
+#     - Fast experimentation with alternative formulations and creative variations
+#     - Optimization of formulas for cost, sustainability, and biodegradability without compromising olfactory identity
+#     - Improved decision-making through visualization and traceability of formula changes
 
-details:
-  contribution: |
-    I worked on the core research and system development, focusing on generative modeling, optimization, and transparency.
-    - Adapted and extended GAN architectures for perfume formula generation, with an emphasis on controllability via latent space manipulation and inversion techniques.
-    - Improved an existing formula optimization pipeline by introducing clustering-based differentiation, enhanced dosing strategies, and modifications to beam search algorithms.
-    - Designed and implemented a traceability mechanism to track, analyze, and visualize changes applied to perfume formulas by the system.
+# details:
+#   contribution: |
+#     I worked on the core research and system development, focusing on generative modeling, optimization, and transparency.
+#     - Adapted and extended GAN architectures for perfume formula generation, with an emphasis on controllability via latent space manipulation and inversion techniques.
+#     - Improved an existing formula optimization pipeline by introducing clustering-based differentiation, enhanced dosing strategies, and modifications to beam search algorithms.
+#     - Designed and implemented a traceability mechanism to track, analyze, and visualize changes applied to perfume formulas by the system.
   
-  tools:
-    - Generative Modeling
-    - TensorFlow
-    - Python
-    - Docker
-    - IBM Cloud
-  results: >
-    Symrise perfumers used Philyra to craft award-winning fragrances for brands like O Boticário,
-    and the collaboration became a flagship example of human–AI creativity highlighted by the press.
+#   tools:
+#     - Generative Modeling
+#     - TensorFlow
+#     - Python
+#     - Docker
+#     - IBM Cloud
+#   results: >
+#     Symrise perfumers used Philyra to craft award-winning fragrances for brands like O Boticário,
+#     and the collaboration became a flagship example of human–AI creativity highlighted by the press.
 ---

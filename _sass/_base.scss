@@ -1855,6 +1855,14 @@ figure.cover {
     padding-bottom: 2rem;
     padding-left: 2rem;
     // padding-right: 2rem;
+    // Section headers (publications / projects) accent
+    // h1 {
+    //   display: block;
+    //   width: 100%;
+    //   margin-bottom: 1.5rem;
+    //   padding-bottom: 0.35rem;
+    //   border-bottom: 1px solid var(--global-divider-color);
+    // }
 
     h3 {
       font-size: clamp(1.85rem, 1.4vw + 1.3rem, 2.25rem);
@@ -2229,6 +2237,14 @@ figure.cover {
         max-width: min(70%, 18rem);
       }
     }
+
+    // Add breathing room between featured sections on stacked layout
+    .publications-section + .see-more-container {
+      margin-bottom: 2.5rem;
+    }
+    .see-more-container + h1 {
+      margin-top: 1.5rem;
+    }
   }
 }
 
@@ -2263,6 +2279,14 @@ figure.cover {
         font-size: 0.9rem;
         max-width: min(90%, 18rem);
       }
+    }
+
+    // Add breathing room between featured sections on stacked layout
+    .publications-section + .see-more-container {
+      margin-bottom: 2.5rem;
+    }
+    .see-more-container + h1 {
+      margin-top: 1.5rem;
     }
   }
 }
