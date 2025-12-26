@@ -2237,14 +2237,6 @@ figure.cover {
         max-width: min(70%, 18rem);
       }
     }
-
-    // Add breathing room between featured sections on stacked layout
-    .publications-section + .see-more-container {
-      margin-bottom: 2.5rem;
-    }
-    .see-more-container + h1 {
-      margin-top: 1.5rem;
-    }
   }
 }
 
@@ -2279,14 +2271,6 @@ figure.cover {
         font-size: 0.9rem;
         max-width: min(90%, 18rem);
       }
-    }
-
-    // Add breathing room between featured sections on stacked layout
-    .publications-section + .see-more-container {
-      margin-bottom: 2.5rem;
-    }
-    .see-more-container + h1 {
-      margin-top: 1.5rem;
     }
   }
 }
