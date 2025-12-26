@@ -47,13 +47,13 @@ project-list-card__media{% if orientation == 'horizontal' %} project-list-card__
           {% if has_meta %}
             <div class="project-list-card__meta">
               {% if project.year %}
-                <span class="project-list-meta">{{ project.year }}</span>
+                <span class="project-list-meta"><span class="project-list-meta__label">Year:</span> {{ project.year }}</span>
               {% endif %}
               {% if project.role %}
-                <span class="project-list-meta">{{ project.role }}</span>
+                <span class="project-list-meta"><span class="project-list-meta__label">Role:</span> {{ project.role }}</span>
               {% endif %}
               {% if project.institution %}
-                <span class="project-list-meta">{{ project.institution }}</span>
+                <span class="project-list-meta"><span class="project-list-meta__label">Institution:</span> {{ project.institution }}</span>
               {% endif %}
             </div>
           {% endif %}
