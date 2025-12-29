@@ -39,6 +39,11 @@ ninja.data = [{
           description: "Investigating cross-lingual subnetworks in multilingual models",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cross_lingual_subnetworks/";
+            },},{id: "projects-exploring-monotonicity-in-early-exiting-language-models",
+          title: 'Exploring Monotonicity in Early-Exiting Language Models',
+          description: "Investigating the monotonicity assumption in early-exiting methods.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/early_exiting/";
             },},{id: "projects-ibm-consulting-advantage",
           title: 'IBM Consulting Advantage',
           description: "AI-powered delivery platform to accelerate value creation at scale.",
