@@ -11,7 +11,7 @@ profile:
   more_info: >
     <i class="fa fa-location-dot fa-xl"></i> Amsterdam, The Netherlands
   description: >
-    Hi, I'm Max! I like building products and doing AI research.
+    Hi, I’m Max, an AI researcher and engineer. I work on large language models, help bring research into production systems, and occasionally teach and mentor.
 
 social: true # includes social icons at the bottom of the page
 
