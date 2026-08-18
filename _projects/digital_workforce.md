@@ -2,6 +2,7 @@
 layout: project
 title: "Digital Workforce"
 description: "IBM-wide initiative building profession-specific AI agents with fine-grained domain expertise."
+img: assets/img/ibm_logo.jpg
 importance: 1
 category: work
 featured: false
