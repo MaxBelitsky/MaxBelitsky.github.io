@@ -28,6 +28,11 @@ ninja.data = [{
           description: "Investigating cross-lingual subnetworks in multilingual models",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cross_lingual_subnetworks/";
+            },},{id: "projects-digital-workforce",
+          title: 'Digital Workforce',
+          description: "IBM-wide initiative building profession-specific AI agents with fine-grained domain expertise.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/digital_workforce/";
             },},{id: "projects-exploring-monotonicity-in-early-exiting-language-models",
           title: 'Exploring Monotonicity in Early-Exiting Language Models',
           description: "Investigating the monotonicity assumption in early-exiting methods.",
@@ -38,6 +43,11 @@ ninja.data = [{
           description: "AI-powered delivery platform to accelerate value creation at scale.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ica/";
+            },},{id: "projects-kv-cache-steering-for-controlling-frozen-llms",
+          title: 'KV Cache Steering for Controlling Frozen LLMs',
+          description: "A lightweight inference-time method for controlling frozen LLM behavior by steering the key-value cache.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/kv_cache_steering/";
             },},{id: "projects-learning-sentence-representations-with-nli",
           title: 'Learning Sentence Representations with NLI',
           description: "Reproduction of the results from &quot;Supervised Learning of Universal Sentence Representations from Natural Language Inference Data&quot; paper by Conneau et al. (2018).",
