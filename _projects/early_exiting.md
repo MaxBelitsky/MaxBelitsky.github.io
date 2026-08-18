@@ -3,7 +3,7 @@ layout: project
 title: "Exploring Monotonicity in Early-Exiting Language Models"
 description: "Investigating the monotonicity assumption in early-exiting methods."
 img: assets/img/early_exiting.png
-importance: 1
+importance: 2
 category: learning
 featured: false
 short_description: "Investigating the monotonicity assumption in early-exiting methods."

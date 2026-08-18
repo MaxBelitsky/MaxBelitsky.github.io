@@ -4,7 +4,7 @@ title: Learning Sentence Representations with NLI
 description: "Reproduction of the results from \"Supervised Learning of Universal Sentence Representations from Natural Language Inference Data\" paper by Conneau et al. (2018)."
 short_description: "Reproduction of the results from \"Supervised Learning of Universal Sentence Representations from Natural Language Inference Data\" paper by Conneau et al. (2018)"
 img: assets/img/nli.png
-importance: 3
+importance: 4
 category: learning
 media_links:
   - title: "Code"

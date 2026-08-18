@@ -12,41 +12,22 @@ media_links:
   - title: "Website"
     url: "https://www.ibm.com/consulting/advantage"
     type: "blog"
-tags: ["RAG", "agents"]
-tagline: "AI-powered platform that scales consulting expertise across teams."
+tags: ["RAG", "agents", "team leadership"]
+tagline: "Enterprise-scale retrieval-augmented generation platform powering IBM Consulting Advantage."
 callouts:
   - "🚀 Enterprise AI Platform"
-year: "2023–2025"
-role: "Lead AI Engineer"
+year: "2023–2026"
+role: "Technical Team Lead | Lead AI Engineer"
 institution: "IBM Consulting"
 links:
   - label: "Product Overview"
     url: "https://www.ibm.com/consulting/advantage"
     icon: "fas fa-external-link-alt"
-# overview:
-#   what: >
-#     I partnered with IBM Consulting leadership to launch an AI-powered delivery platform that puts
-#     reusable assets, accelerators, and playbooks in the hands of every engagement team.
-#   why: >
-#     Consultants lose time reinventing the wheel. By packaging our collective expertise with
-#     generative AI assist, I helped teams ship client-ready work faster and with more consistency.
-# details:
-#   contribution: >
-#     I co-led discovery with product, design, and delivery leads; translated those insights into
-#     AI-assisted workflows; and built the retrieval pipelines that surface the right assets inside
-#     consultants’ day-to-day tools.
-#   architecture: >
-#     I orchestrated a retrieval-augmented generation stack that unifies structured delivery data,
-#     IBM watsonx models, and guardrail services, exposing them through modular APIs and workspace
-#     components.
-#   tools:
-#     - IBM watsonx
-#     - Retrieval-Augmented Generation
-#     - FastAPI
-#     - Kubernetes
-#     - ElasticSearch
-#   results: >
-#     I delivered internal pilots that let engagement teams assemble proposals and delivery assets in
-#     minutes, yielding double-digit time savings in discovery and proposal prep and earning executive
-#     sponsorship for the global rollout.
+overview:
+  what: >
+    I led a team of engineers building the enterprise retrieval-augmented generation (RAG)
+    platform behind IBM Consulting Advantage — a modular pipeline spanning parsing, chunking,
+    retrieval, reranking, and conversational orchestration. The platform is available to 150,000+ users across IBM (with 5,000+ daily users) and
+    ingesting 100,000+ new documents every month across IBM's internal knowledge and client
+    collections.
 ---

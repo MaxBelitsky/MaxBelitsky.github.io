@@ -810,7 +810,7 @@ footer.sticky-bottom {
   }
 
   .project-list-card__media {
-    aspect-ratio: 16 / 10;
+    width: 100%;
     max-height: clamp(180px, 24vw, 230px);
     display: flex;
     align-items: stretch;
@@ -828,7 +828,7 @@ footer.sticky-bottom {
 
   .project-list-card__media figure {
     margin: 0;
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 14px;
     overflow: hidden;
