@@ -58,6 +58,11 @@ ninja.data = [{
           description: "AI tool for fragrance generation and enhancement.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/philyra/";
+            },},{id: "projects-retrieval-evaluator",
+          title: 'Retrieval Evaluator',
+          description: "Test retrieval on chunks from your production database. If you don’t have evaluation queries yet, generate a starter dataset from those same chunks.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/retrieval-evaluator/";
             },},{
         id: 'social-github',
         title: 'GitHub',
